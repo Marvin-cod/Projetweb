@@ -1,0 +1,17 @@
+<p>lister-event works!</p>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th class="col-2">Nom</th>
+    <th class="col-4">lieu</th>
+    <th class="col-6">date de cloture</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let evt of this.liste; index as i">
+    <td>{{evt.nom_event}}</td>
+    <td>{{evt.lieu_event}}</td>
+    <td>{{evt.date_cloture}}</td>
+  </tr>
+  </tbody>
+</table>
