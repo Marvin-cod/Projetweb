@@ -1,5 +1,5 @@
 export class Evenement{
-  // @ts-ignorb e
+  // @ts-ignore
   id: number;
   // @ts-ignore
   acronyme: string;
