@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import {Evenement} from "../Evenement";
+import {BrowserModule} from "@angular/platform-browser";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-lister-event',
   templateUrl: './lister-event.component.html',
   styleUrls: ['./lister-event.component.css']
 })
+
 export class ListerEventComponent {
   // @ts-ignore
   liste: Evenement[] = [];

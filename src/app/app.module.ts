@@ -7,7 +7,13 @@ import { ListerEventComponent } from './lister-event/lister-event.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { EvenementComponent } from './evenement/evenement.component';
 import { PersonneComponent } from './personne/personne.component';
-
+import {FormsModule} from "@angular/forms";
+import {Router, RouterModule, Routes} from "@angular/router";
+const appRoutes:Routes = [
+  // 1 route par module afin de charger les pages
+  {path : 'lister-evt', component: ListerEventComponent },
+  {path : 'evenement', component: EvenementComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +23,7 @@ import { PersonneComponent } from './personne/personne.component';
     PersonneComponent
   ],
   imports: [
-    BrowserModule, NgbModule
+    BrowserModule, NgbModule, RouterModule.forRoot(appRoutes), FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,11 +9,10 @@
   </thead>
   <tbody>
   <tr *ngFor="let evt of this.liste; index as i">
-    <td>{{evt.nom_event}}</td>
+    <td><a href="../evenement">{{evt.nom_event}}</a></td>
     <td>{{evt.lieu_event}}</td>
     <td>{{evt.date_cloture}}</td>
   </tr>
   </tbody>
 </table>
 
-<app-evenement></app-evenement>

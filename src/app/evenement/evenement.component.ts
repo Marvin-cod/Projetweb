@@ -15,7 +15,7 @@ export class EvenementComponent {
     this.evenement = new Evenement();
     this.evenement.id=1;
     this.evenement.lieu_event="Toulouse";
-    this.evenement.nom_event="la plus incroyable soirée";
+    this.evenement.nom_event="la plus incroyable soirée avec plus de detail";
     this.evenement.date_cloture=new Date(2023,6,25);//ecrire le reste si on veut pour l'instant flemme
 
   }
