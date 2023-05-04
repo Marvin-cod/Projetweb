@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+.background{
+  background: #080710;
+}/* You can add global styles to this file, and also import other style files */
+.footer{
+  height: 50px;/* <==> bodyy */
+  background: white;
+}
+.bodyy{
+  min-height: 100%;
+  margin-bottom: -50px; /* <==> footer*/
+}
