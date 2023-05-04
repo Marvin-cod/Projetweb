@@ -9,6 +9,7 @@ import { EvenementComponent } from './evenement/evenement.component';
 import { PersonneComponent } from './personne/personne.component';
 import {FormsModule} from "@angular/forms";
 import {Router, RouterModule, Routes} from "@angular/router";
+import { PageAccueilComponent } from './page-accueil/page-accueil.component';
 const appRoutes:Routes = [
   // 1 route par module afin de charger les pages
   {path : 'lister-evt', component: ListerEventComponent },
@@ -20,7 +21,8 @@ const appRoutes:Routes = [
     ListerEventComponent,
     InscriptionComponent,
     EvenementComponent,
-    PersonneComponent
+    PersonneComponent,
+    PageAccueilComponent
   ],
   imports: [
     BrowserModule, NgbModule, RouterModule.forRoot(appRoutes), FormsModule
