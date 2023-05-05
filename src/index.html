@@ -6,18 +6,43 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<div class="background">
-<div class="bodyy">
-<div class="text-center bg-primary"><h1>Evenement</h1></div>
+<header>
 
+</header>
+<header class="header">
+  <nav class="navbar navbar-expand-lg fixed-top py-3">
+    <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">Gestion d'évènements</a>
+      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="#" class="nav-link text-uppercase font-weight-bold">Accueil <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Déconnexion</a></li>
+          <li class="nav-item"><a href="https://moodle-miage-toulouse.westeurope.cloudapp.azure.com/auth/oidc/" class="nav-link text-uppercase font-weight-bold">Miage</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 <div class="container">
   <app-root></app-root>
-</div></div>
 </div>
 
-<footer>
-  <div class ="footer"><p>Miage</p></div>
-
-</footer>
+<div class="footer-basic">
+  <footer>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Accueil</a></li>
+      <li class="list-inline-item"><a href="https://moodle-miage-toulouse.westeurope.cloudapp.azure.com/auth/oidc/">Miage</a></li>
+      <li class="list-inline-item"><a href="https://www.univ-tlse3.fr/">UT3</a></li>
+      <li class="list-inline-item"><a href="#">Déconnexion</a></li>
+    </ul>
+    <p class="copyright">Gestion d'évènements © 2023</p>
+  </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </html>
