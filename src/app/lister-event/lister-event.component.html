@@ -1,3 +1,4 @@
+<div><button routerLink="../">Connexion/inscription</button></div> <!--je mets le liens par défaut donnant Inscription -->
 <p>lister-event works!</p>
 <table class="table table-striped">
   <thead>
@@ -9,7 +10,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let evt of this.liste; index as i">
-    <td><a href="../evenement">{{evt.nom_event}}</a></td>
+    <td><a routerLink="../evenement">{{evt.nom_event}}</a></td>
     <td>{{evt.lieu_event}}</td>
     <td>{{evt.date_cloture}}</td>
   </tr>

@@ -1,3 +1,4 @@
+<div><button routerLink="../lister-evt">Liste des évenements</button></div>
 <p>evenement works!</p>
 <table class="table table-striped">
   <thead>
@@ -5,11 +6,16 @@
     <th class="col-2">Nom</th>
     <th class="col-4">lieu</th>
     <th class="col-6">date de cloture</th>
+    <th>Choix</th>
   </tr>
   </thead>
   <tbody>
     <td>{{evenement.nom_event}}</td>
     <td>{{evenement.lieu_event}}</td>
     <td>{{evenement.date_cloture}}</td>
+  <td><button class="col-12">S'inscrire</button>
+    <button class="col-12" routerLink="../lister-evt">Supprimer</button> <!--supprimer visible que si admin-->
+  </td>
+
   </tbody>
 </table>
