@@ -9,6 +9,8 @@ import { EvenementComponent } from './evenement/evenement.component';
 import {FormsModule} from "@angular/forms";
 import {Router, RouterModule, Routes} from "@angular/router";
 import { AjouterEventComponent } from './ajouter-event/ajouter-event.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {ApiEvenementsService} from "./api-evenements.service";
 //import { PageAccueilComponent } from './page-accueil/page-accueil.component';
 const appRoutes:Routes = [
   // 1 route par module afin de charger les pages
@@ -30,9 +32,9 @@ const appRoutes:Routes = [
     //PageAccueilComponent
   ],
   imports: [
-    BrowserModule, NgbModule, RouterModule.forRoot(appRoutes), FormsModule
+    BrowserModule, NgbModule, RouterModule.forRoot(appRoutes), FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [ApiEvenementsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
