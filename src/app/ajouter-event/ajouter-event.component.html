@@ -1,0 +1,49 @@
+
+<div class="form-group row">
+  <label for="Nom" class="col-xs-4 col-md-2 col-form-label">Nom : </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="Nom" [(ngModel)]="evenement.nom_event">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Nom" class="col-xs-4 col-md-2 col-form-label">Acronyme: </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="acronyme" [(ngModel)]="evenement.acronyme">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Nom" class="col-xs-4 col-md-2 col-form-label">Description : </label>
+  <div class="col-xs-8 col-sm-4">
+    <textarea type="text" class="form-control" id="description" [(ngModel)]="evenement.description"></textarea>
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Nom" class="col-xs-4 col-md-2 col-form-label">Date d'ouverture : </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="date_ouverture" [(ngModel)]="evenement.date_ouverture">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Nom" class="col-xs-4 col-md-2 col-form-label">Date de cloture : </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="date_cloture" [(ngModel)]="evenement.date_cloture">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Nom" class="col-xs-4 col-md-2 col-form-label">Nombre maximum de participants: </label>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" id="nombre_max" [(ngModel)]="evenement.nombre_max">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Adresse" class="col-xs-4 col-md-2 col-form-label">Adresse : </label>
+  <div class="col-xs-8 col-sm-4">
+    <textarea type="text" class="form-control" id="Adresse" rows="3" [(ngModel)]="evenement.lieu_event"></textarea>
+  </div>
+</div>
+<button class="btn btn-primary">Valider</button> <!-- faire focntion .ts-->
+
+Test:
+<pre>{{evenement | json}}</pre>
+
+<!-- infos event :  id,acronyme,nom,adresse,description,date_ouverture, date_cloture,nombre_max-->
