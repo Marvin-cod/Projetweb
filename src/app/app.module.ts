@@ -15,7 +15,7 @@ import {ApiEvenementsService} from "./api-evenements.service";
 const appRoutes:Routes = [
   // 1 route par module afin de charger les pages
   {path : 'lister-evt', component: ListerEventComponent },
-  {path : 'evenement', component: EvenementComponent },
+  {path : 'evenement/:id', component: EvenementComponent },
   {path : 'add-event', component: AjouterEventComponent},
   //{path : 'inscription', component:InscriptionComponent},
   {path : '', component: InscriptionComponent},
