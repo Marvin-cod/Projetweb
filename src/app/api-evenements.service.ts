@@ -16,6 +16,12 @@ export class ApiEvenementsService {
   public getEvenement(id : number): Observable<Evenement>{
     return this.httpClient.get<Evenement>(this.url + '/'+ id);
   }
+  public supprimerEvenement(id : number){
+    this.httpClient.delete<Evenement>(this.url +'/'+id).subscribe(
+      (reponse : Evenement)=> {console.log(reponse);},
+      (error)=>{console.log("erreur lors de l'ajout")}
+    );
+  }
   public ajouterEvenement(event: Evenement){
     this.httpClient.post<Evenement>(this.url, event).subscribe(
       (reponse : Evenement)=> {console.log(reponse);},

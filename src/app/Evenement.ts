@@ -10,9 +10,9 @@ export class Evenement{
   // @ts-ignore
   description: string;
   // @ts-ignore
-  date_ouverture: Date;
+  date_ouverture: string;
   // @ts-ignore
-  date_cloture: Date;
+  date_cloture: string;
   // @ts-ignore pour que cela ne soit pas souliogné en rouge car c'est la bonne écriture
   nombre_max: number;
 }
