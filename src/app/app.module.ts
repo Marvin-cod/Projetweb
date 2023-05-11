@@ -16,7 +16,7 @@ import { InscriptionEventComponent } from './inscription-event/inscription-event
 const appRoutes:Routes = [
   // 1 route par module afin de charger les pages
   {path : 'lister-evt', component: ListerEventComponent },
-  {path : 'evenement', component: EvenementComponent },
+  {path : 'evenement/:id', component: EvenementComponent },
   {path: "inscription-event", component : InscriptionEventComponent},
   {path : 'add-event', component: AjouterEventComponent},
   //{path : 'inscription', component:InscriptionComponent},
