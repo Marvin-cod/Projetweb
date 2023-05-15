@@ -9,5 +9,5 @@ export class Personne{
   // @ts-ignore
   telephone : String;
   // @ts-ignore
-  idEvent : number[];
+  idEvent : String; //liste avant
 }

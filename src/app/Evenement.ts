@@ -15,4 +15,5 @@ export class Evenement{
   date_cloture: string;
   // @ts-ignore pour que cela ne soit pas souliogné en rouge car c'est la bonne écriture
   nombre_max: number;
+  //ajouter compteur dans evenement pour savoir quand max personne est atteint
 }
