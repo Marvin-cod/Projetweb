@@ -1,10 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Evenement} from "../Evenement";
-import {BrowserModule} from "@angular/platform-browser";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {FormsModule} from "@angular/forms";
 import {ApiEvenementsService} from "../api-evenements.service";
 import {HttpClient} from "@angular/common/http";
+import {Evenement} from "../Evenement";
 
 @Component({
   selector: 'app-ajouter-event',
