@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {GlobalDataService} from "./global-data.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Projetweb';
+  constructor(public globalData: GlobalDataService) {}
+
+  changeGlobalVariableTrue() {
+    this.globalData.setMyGlobalVariableTrue(true);
+
+}
+  changeGlobalVariableFalse() {
+    this.globalData.setMyGlobalVariableFalse(false);
+
+  }
 }
