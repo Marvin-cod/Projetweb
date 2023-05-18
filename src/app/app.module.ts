@@ -12,6 +12,7 @@ import { AjouterEventComponent } from './ajouter-event/ajouter-event.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {ApiEvenementsService} from "./api-evenements.service";
 import { InscriptionEventComponent } from './inscription-event/inscription-event.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
 //import { PageAccueilComponent } from './page-accueil/page-accueil.component';
 const appRoutes:Routes = [
   // 1 route par module afin de charger les pages
@@ -19,6 +20,7 @@ const appRoutes:Routes = [
   {path : 'evenement/:id', component: EvenementComponent },
   {path: "inscription-event/:id", component : InscriptionEventComponent},
   {path : 'add-event', component: AjouterEventComponent},
+  {path : 'stats', component: StatistiquesComponent},
   //{path : 'inscription', component:InscriptionComponent},
   {path : '', component: InscriptionComponent},
   {path : "**", component : InscriptionComponent}
@@ -33,6 +35,7 @@ const appRoutes:Routes = [
     EvenementComponent,
     AjouterEventComponent,
     InscriptionEventComponent,
+    StatistiquesComponent,
     //PageAccueilComponent
   ],
   imports: [

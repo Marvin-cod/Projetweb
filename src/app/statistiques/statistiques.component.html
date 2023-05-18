@@ -1,0 +1,35 @@
+<p>statistiques works!</p>
+<div>Il y a {{nombreEvent}} évenements avec {{nombrePersonnes}} inscrites donnant {{nombreMoyens}} participants par évènement </div>
+<div><table class="table table-striped">
+  <thead>
+  <tr>
+    <th class="col-2">Acronyme</th>
+    <th class="col-4">lieu</th>
+    <th class="col-6">date de cloture</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let evt of this.listestats; index as i">
+    <td><a routerLink="../evenement/{{evt.id}}">{{evt.acronyme}}</a></td>
+    <td>{{evt.lieu_event}}</td>
+    <td>{{evt.date_cloture}}</td>
+  </tr>
+  </tbody>
+</table></div>
+
+<div><table class="table table-striped">
+  <thead>
+  <tr>
+    <th class="col-2">Prénom</th>
+    <th class="col-4">mail</th>
+    <th class="col-6">nombre d'évenements</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pers of this.listeParticipants; index as i">
+    <td><a >{{pers.prenom}}</a></td>
+    <td>{{pers.mail}}</td>
+    <td>{{pers.idEvent.split(" ").length}}</td>
+  </tr>
+  </tbody>
+</table></div>

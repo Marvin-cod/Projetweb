@@ -36,4 +36,7 @@ export class ApiEvenementsService {
       (reponse : Personne)=> {console.log(reponse);},
       (error)=>{console.log("erreur lors de l'ajout")})
   }
+  public listerPersonnes(){
+    return this.httpClient.get<Personne []>(this.urlpersonne);
+  }
 }
