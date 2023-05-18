@@ -11,18 +11,18 @@ export class InscriptionComponent {
   username: string ;
   //@ts-ignore
   password: string ;
-//@ts-ignore
-  loginMessage : string;
 
+  printer : string | undefined;
   constructor(private router: Router) {}
 
   onLogin() {
-    //  this.router.navigate(['lister-evt']);
-    if (this.username === 'admin' && this.password === 'admin') {
-      this.loginMessage = `Username: ${this.username}, Password: ${this.password}`;
-    } else {
-      this.loginMessage = `Username: ${this.username}, Password: ${this.password}`;
-    }
+      //this.router.navigate(['lister-evt']);
+      let u = this.username;
+      let p = this.password;
+    if (u === 'admin' && p === 'admin') {
+      this.router.navigate(['lister-evt']
+      );
 
+    }
   }
 }
