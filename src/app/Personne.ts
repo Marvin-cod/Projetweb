@@ -10,4 +10,7 @@ export class Personne{
   telephone : String;
   // @ts-ignore
   idEvent : String; //liste avant
+  // @ts-ignore
+  admin : String;
+
 }
