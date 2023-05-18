@@ -20,11 +20,16 @@ export class StatistiquesComponent {
   nombreMoyens = 0;
   constructor(private apiEvenementService : ApiEvenementsService) {}
   ngOnInit(){ //dès le démarrage (nginit) initialise notre liste
-    this.apiEvenementService.recupererliste().subscribe((dataE : Evenement[])=>{this.listestats = dataE});
-    this.apiEvenementService.listerPersonnes().subscribe((dataP : Personne[])=>{this.listeParticipants = dataP});
-    this.nombreEvent = this.listestats.length;
-    this.nombrePersonnes = this.listeParticipants.length;
-    this.nombreMoyens = this.nombrePersonnes/this.nombreEvent;
+    this.apiEvenementService.recupererliste().subscribe((dataE : Evenement[])=>{
+      this.listestats = dataE;
+      this.nombreEvent = this.listestats.length;
+      this.nombreMoyens = this.nombrePersonnes/this.nombreEvent;
+    });
+    this.apiEvenementService.listerPersonnes().subscribe((dataP : Personne[])=>{
+      this.listeParticipants = dataP;
+      this.nombrePersonnes = this.listeParticipants.length;
+      this.nombreMoyens = this.nombrePersonnes/this.nombreEvent;
+    });
   }
 
 }

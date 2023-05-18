@@ -1,5 +1,6 @@
 <p>statistiques works!</p>
-<div>Il y a {{nombreEvent}} évenements avec {{nombrePersonnes}} inscrites donnant {{nombreMoyens}} participants par évènement </div>
+<div>Il y a {{this.nombreEvent}} évenements avec {{this.nombrePersonnes}} personnes inscrites donnant {{this.nombreMoyens}} participants par évènement
+</div>
 <div><table class="table table-striped">
   <thead>
   <tr>
@@ -10,7 +11,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let evt of this.listestats; index as i">
-    <td><a routerLink="../evenement/{{evt.id}}">{{evt.acronyme}}</a></td>
+    <td><a routerLink="../stats-event/{{evt.id}}">{{evt.acronyme}}</a></td>
     <td>{{evt.lieu_event}}</td>
     <td>{{evt.date_cloture}}</td>
   </tr>
