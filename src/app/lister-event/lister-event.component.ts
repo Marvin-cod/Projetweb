@@ -5,6 +5,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
 import {ApiEvenementsService} from "../api-evenements.service";
 import {InscriptionComponent} from "../inscription/inscription.component";
+import {GlobalDataService} from "../global-data.service"; //ajout marvin
 
 @Component({
   selector: 'app-lister-event',
@@ -19,11 +20,12 @@ export class ListerEventComponent  implements OnInit{
 
   constructor(
     private apiEvenementService: ApiEvenementsService,
-    private authService: InscriptionComponent
+    private authService: InscriptionComponent,
+    private param : GlobalDataService
   ) {}
 
   ngOnInit() {
-    this.isAdmin = this.authService.isAdminBool();
+    this.isAdmin = this.param.myGlobalVariable; //ajout marvin
     this.apiEvenementService
       .recupererliste()
       .subscribe((data: Evenement[]) => {

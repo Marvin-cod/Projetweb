@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core';
 export class GlobalDataService {
   myGlobalVariable = false;
 
-  setMyGlobalVariableTrue(newValue: boolean) {
+  setMyGlobalVariableTrue() {
     this.myGlobalVariable = true;
   }
-  setMyGlobalVariableFalse(newValue: boolean) {
+  setMyGlobalVariableFalse() {//j'ai enlevé à l'interieur la variable
     this.myGlobalVariable = false;
   }
 }

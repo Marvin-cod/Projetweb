@@ -11,11 +11,11 @@ export class AppComponent {
   constructor(public globalData: GlobalDataService) {}
 
   changeGlobalVariableTrue() {
-    this.globalData.setMyGlobalVariableTrue(true);
+    this.globalData.setMyGlobalVariableTrue();//j'ai elevé true dans les param
 
 }
   changeGlobalVariableFalse() {
-    this.globalData.setMyGlobalVariableFalse(false);
+    this.globalData.setMyGlobalVariableFalse(); //je comprends pas à quoi ça sert
 
   }
 }

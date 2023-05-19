@@ -31,27 +31,32 @@ export class InscriptionComponent /*implements OnInit*/{
   vari : string;
 
   printer : string | undefined;
-  constructor(private router: Router/*,public globalData: GlobalDataService,private httpClient: HttpClient*/
+  constructor(private router: Router,
+              private param : GlobalDataService//ajoutmarvin
+              /*,public globalData: GlobalDataService,private httpClient: HttpClient*/
   ) {
 
   }
     private currentUser: User | null = null;
 
     login(username: string, password: string) {
-  if (username === 'admin' && password === 'admin') {
-  this.currentUser = {
-    username,
-    password,
-    isAdmin: true
-  };
-} else {
-  this.currentUser = {
-    username,
-    password,
-    isAdmin: false
-  };
-}
-}
+      if (username === 'admin' && password === 'admin') {
+        this.param.setMyGlobalVariableTrue();//ajout marvin la c'est true
+        this.currentUser = {
+          username,
+          password,
+          isAdmin: true
+        };
+      }
+      else {
+        this.param.setMyGlobalVariableFalse();//ajout marvin la c'est false
+        this.currentUser = {
+          username,
+          password,
+          isAdmin: false
+        };
+      }
+    }
 
 logout() {
   this.currentUser = null;
