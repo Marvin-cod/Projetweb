@@ -1,5 +1,4 @@
-<div><button routerLink="../../lister-evt">Liste des évenements</button></div>
-<p>evenement works!</p>
+<div><button routerLink="../../lister-evt" class="btn btn-primary">Liste des évenements</button></div>
 <table class="table table-striped">
   <thead>
   <tr>
@@ -17,8 +16,8 @@
     <td>{{evenement.date_cloture}}</td>
     <td>{{evenement.description}}</td>
     <td>{{evenement.nombre_max}}</td>
-  <td><button class="col-12" routerLink="../../inscription-event/{{evenement.id}}">S'inscrire</button>
-    <button class="col-12" (click)='suppression(evenement.id)' routerLink="../../lister-evt">Supprimer</button> <!--supprimer visible que si admin-->
+  <td><button class="col-12 btn btn-primary" routerLink="../../inscription-event/{{evenement.id}}">S'inscrire</button>
+    <button class="col-12 btn btn-danger" (click)='suppression(evenement.id)' routerLink="../../lister-evt">Supprimer</button> <!--supprimer visible que si admin-->
   </td>
 
   </tbody>
