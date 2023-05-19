@@ -16,13 +16,20 @@ import {GlobalDataService} from "../global-data.service"; //ajout marvin
 export class ListerEventComponent  implements OnInit{
   liste: Evenement[] = [];
   isAdmin: boolean | undefined;
-  nom: string | undefined;
 
+  listeSansAncien : Evenement[] = [];
+
+  //@ts-ignore
+  DateAcutelle : Date;
   constructor(
     private apiEvenementService: ApiEvenementsService,
     private authService: InscriptionComponent,
     private param : GlobalDataService
   ) {}
+  dateIncorrect(date1: Date, date2: Date): boolean {
+    return date1.getTime() > date2.getTime();
+  }
+  // date actuel 2022 > ferme en 2021 ==> True
 
   ngOnInit() {
     this.isAdmin = this.param.myGlobalVariable;
@@ -40,12 +47,25 @@ export class ListerEventComponent  implements OnInit{
     this.apiEvenementService
       .recupererliste()
       .subscribe((data: Evenement[]) => {
+        this.listeSansAncien = data.filter(evt => {
+          let dateParts = evt.date_cloture.split("/");
+          let date = new Date(+dateParts[2], +dateParts[1] - 1, +dateParts[0]);
+          return new Date().getTime() <= date.getTime();
+        });
         this.liste = data;
+
+
       });
+
+
   }
-
-
-
+/*
+  this.listeSansAncien = data.filter(evenement => {
+    const [dayCloture, monthCloture, yearCloture] = evenement.date_cloture.split("/").map(Number);
+    const dateCloture = new Date(yearCloture, monthCloture - 1, dayCloture);
+    return dateCloture > this.DateAcutelle;
+  });
+*/
 
 
 

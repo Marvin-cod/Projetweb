@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Evenement} from "../Evenement";
 import {ApiEvenementsService} from "../api-evenements.service";
 import {HttpClient} from "@angular/common/http";
@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   templateUrl: './evenement.component.html',
   styleUrls: ['./evenement.component.css']
 })
-export class EvenementComponent {
+export class EvenementComponent implements OnInit{
 
   // @ts-ignore
   evenement: Evenement;
