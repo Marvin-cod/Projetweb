@@ -25,10 +25,9 @@ export class InscriptionComponent /*implements OnInit*/{
   //@ts-ignore
   password: string ;
   //@ts-ignore
-  isAdmin : boolean;
+  TexteVide : String ;
 
-  //@ts-ignore
-  vari : string;
+
 
   printer : string | undefined;
   constructor(private router: Router,
@@ -72,8 +71,13 @@ isAdminBool() {
 
   onLogin(){
     this.login(this.username,this.password);
-    this.router.navigate(['lister-evt']);
+    if (this.password === undefined || this.username === undefined){
+      this.TexteVide =  "Attention, vous n'avez rien ecrit de pseudo ou de mot de passe.";
 
+    }else {
+      this.TexteVide ="";
+      this.router.navigate(['lister-evt']);
+    }
   }
 
 
