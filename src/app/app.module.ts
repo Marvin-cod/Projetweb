@@ -14,7 +14,9 @@ import {ApiEvenementsService} from "./api-evenements.service";
 import { InscriptionEventComponent } from './inscription-event/inscription-event.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { StatistiquesEventComponent } from './statistiques-event/statistiques-event.component';
+import { CreationCompteComponent } from './creation-compte/creation-compte.component';
 //import { PageAccueilComponent } from './page-accueil/page-accueil.component';
+
 const appRoutes:Routes = [
   // 1 route par module afin de charger les pages
   {path : 'lister-evt', component: ListerEventComponent },
@@ -24,6 +26,7 @@ const appRoutes:Routes = [
   {path : 'stats', component: StatistiquesComponent},
   {path : 'stats-event/:id', component: StatistiquesEventComponent},
   //{path : 'inscription', component:InscriptionComponent},
+  {path : 'CreaCompt',component:CreationCompteComponent},
   {path : '', component: InscriptionComponent},
   {path : "**", component : InscriptionComponent}
 
@@ -39,6 +42,7 @@ const appRoutes:Routes = [
     InscriptionEventComponent,
     StatistiquesComponent,
     StatistiquesEventComponent,
+    CreationCompteComponent,
     //PageAccueilComponent
   ],
   imports: [
