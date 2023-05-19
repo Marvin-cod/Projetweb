@@ -1,16 +1,16 @@
 export class Personne{
 
   // @ts-ignore
-  nom : String;
+  nom : string;
   // @ts-ignore
-  prenom : String;
+  prenom : string;
   // @ts-ignore
-  mail : String;
+  mail : string;
   // @ts-ignore
-  telephone : String;
+  telephone : string;
   // @ts-ignore
-  idEvent : String; //liste avant
+  idEvent : string; //liste avant
   // @ts-ignore
-  admin : String;
+  admin : string;
 
 }

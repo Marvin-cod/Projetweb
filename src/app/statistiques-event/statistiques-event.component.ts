@@ -26,6 +26,10 @@ export class StatistiquesEventComponent {
       this.listeParticipants = dataP;
     });
 
-
   }
+  supprimerPersonnesEvent( mail : string, idEvent : number){
+    this.apiEvenementService.supprimerPersonneEvent(mail, idEvent)
+  }
+
+  protected readonly String = String;
 }
