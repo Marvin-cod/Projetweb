@@ -28,5 +28,4 @@ export class StatistiquesComponent {
       this.nombreMoyens = this.nombrePersonnes/this.nombreEvent;
     });
   }
-
 }

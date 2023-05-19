@@ -42,4 +42,10 @@ export class ApiEvenementsService {
   public listerPersonnesEvent(idEvent : number){
     return this.httpClient.get<Personne []>(this.urlpersonne+'/'+idEvent);
   }
+  public supprimerPersonneEvent(mail : string, idEvent : number){
+    this.httpClient.delete<Personne>(this.urlpersonne + '/' + mail + '/' + idEvent).subscribe(
+      (reponse : Personne)=> {console.log(reponse);},
+      (error)=>{console.log("erreur lors de l'ajout")});
+  }
 }
+

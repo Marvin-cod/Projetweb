@@ -35,6 +35,8 @@
   <tr *ngFor="let pers of this.listeParticipants; index as i">
     <td><a >{{pers.prenom}}</a></td>
     <td>{{pers.mail}}</td>
+    <td><button class="col-12" (click)="supprimerPersonnesEvent(pers.mail,evenement.id)" routerLink="../../lister-evt">Supprimer</button> <!--supprimer visible que si admin-->
+    </td>
   </tr>
   </tbody>
 </table></div>
