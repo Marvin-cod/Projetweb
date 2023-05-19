@@ -25,7 +25,18 @@ export class ListerEventComponent  implements OnInit{
   ) {}
 
   ngOnInit() {
-    this.isAdmin = this.param.myGlobalVariable; //ajout marvin
+    this.isAdmin = this.param.myGlobalVariable;
+    let addEvent = document.getElementById("addEvent");
+    let stat = document.getElementById("stat");
+
+    if (this.isAdmin === false){
+      // @ts-ignore
+      stat.style.display = "none";
+      // @ts-ignore
+      addEvent.style.display = "none";
+    }
+
+
     this.apiEvenementService
       .recupererliste()
       .subscribe((data: Evenement[]) => {
@@ -41,13 +52,13 @@ export class ListerEventComponent  implements OnInit{
 
 
 
-    /*
-    const p1 = new Evenement();
-    p1.nom_event="Soirée de fou";
-    p1.lieu_event="Toulouse 3 chemin de la foire";
-    p1.date_cloture=new Date(2023,5,2);//pas de 0 devant sinon pas compris
-    this.liste.push(p1);
-  */
+  /*
+  const p1 = new Evenement();
+  p1.nom_event="Soirée de fou";
+  p1.lieu_event="Toulouse 3 chemin de la foire";
+  p1.date_cloture=new Date(2023,5,2);//pas de 0 devant sinon pas compris
+  this.liste.push(p1);
+*/
 
 
 
