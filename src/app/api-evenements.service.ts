@@ -39,4 +39,7 @@ export class ApiEvenementsService {
   public listerPersonnes(){
     return this.httpClient.get<Personne []>(this.urlpersonne);
   }
+  public listerPersonnesEvent(idEvent : number){
+    return this.httpClient.get<Personne []>(this.urlpersonne+'/'+idEvent);
+  }
 }

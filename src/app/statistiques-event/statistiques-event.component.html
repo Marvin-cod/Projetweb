@@ -22,3 +22,19 @@
 <td>{{evenement.nombre_max}}</td>
 </tbody>
 </table>
+
+<div><table class="table table-striped">
+  <thead>
+  <tr>
+    <th class="col-2">Prénom</th>
+    <th class="col-4">mail</th>
+    <th class="col-6">nombre d'évenements</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pers of this.listeParticipants; index as i">
+    <td><a >{{pers.prenom}}</a></td>
+    <td>{{pers.mail}}</td>
+  </tr>
+  </tbody>
+</table></div>
