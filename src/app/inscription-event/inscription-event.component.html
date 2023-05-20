@@ -50,15 +50,15 @@
                 </div>
               </div>
               <div class="btn-toolbar mb-8" role="toolbar" aria-label="Toolbar with button groups">
-                <!--<input class="btn btn-primary btn-lg" type="submit" value="S'inscrire"    routerLink="../../lister-evt"/>
+                <!--<input class="btn btn-primary btn-lg" type="submit" value="S'inscrire"    />
 -->
-                <button class="btn btn-primary btn-lg" (click)="ajouterPersonne()"  >S'inscrire</button>
-                <button class="btn btn-primary btn-lg" type="button" value="Back" routerLink="../../evenement/:id"> Annuler</button>
+                <button class="btn btn-primary btn-lg" id="inscriptonB" [disabled]="isButtonDisabled" (click)="ajouterPersonne()" routerLink="../../lister-evt" >S'inscrire</button>
+                <button class="btn btn-primary btn-lg" type="button" value="Back" routerLink="../../evenement/{{ID}}"> Annuler</button>
               </div>
+            <p style="color: #FF1493">{{msgImp}}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </body>
-<h2>le nombre de personne est {{test}}</h2>
