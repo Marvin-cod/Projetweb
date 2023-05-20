@@ -51,6 +51,7 @@ export class InscriptionEventComponent implements OnInit{
         }
       }
 
+
       this.apiEvenementService.getEvenement(id).subscribe((data)=>{this.evenement=data;
         this.nbPersMax = this.evenement.nombre_max;
         if (this.nbPersMax <= this.nbPersDansEvt){
