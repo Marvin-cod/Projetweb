@@ -36,10 +36,12 @@ export class EvenementComponent implements OnInit{
 */
 
   }
-  suppression(id : number){
-    //j 'ai les bonne infos testé avec
-    //if (confirm ("test"+id)
+
+  suppression(id: number) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer cet événement?")) {
       this.apiEvenementService.supprimerEvenement(id);
+    }
   }
+
 
 }
