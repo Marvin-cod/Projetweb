@@ -4,7 +4,7 @@ import {HttpClient} from "@angular/common/http";
 // import {liste} from "../lister-event/lister-event.component"; a voir j'ai pensé a cette solution
 import {Personne} from "../Personne";
 import {Evenement} from "../Evenement";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 
@@ -17,12 +17,26 @@ import {ActivatedRoute} from "@angular/router";
 export class InscriptionEventComponent implements OnInit{
   // @ts-ignore
   personnes : Personne;
+  // @ts-ignore
+  evenement: Evenement;
+  listeParticipants : Personne [] = [];
+
+    test : Number | undefined  ;
 
   constructor(private apiEvenementService : ApiEvenementsService,
               private httpClient: HttpClient,
-              private route : ActivatedRoute) {
+              private route : ActivatedRoute,
+              private router : Router) {
   }
   ngOnInit() {
+
+    const id = this.route.snapshot.params['id']; //récupérer l'id àpartir du routage (du lien url)
+    this.apiEvenementService.listerPersonnesEvent(id).subscribe((dataP : Personne[])=>{
+      this.listeParticipants = dataP;
+    });
+    this.test = this.listeParticipants.length; // NICO : ICI DANS LISTE DE PARTICIPANT J'AI RIEN, J'AI TJRS 0 EN NOMBRE DE PERSONNE
+
+    //------------------------
     this.personnes = new Personne();
 
   }

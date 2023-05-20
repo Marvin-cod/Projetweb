@@ -28,8 +28,10 @@ export class StatistiquesEventComponent {
 
   }
   supprimerPersonnesEvent( mail : string, idEvent : number){
-    this.apiEvenementService.supprimerPersonneEvent(mail, idEvent)
+    if (confirm("Êtes-vous sûr de vouloir supprimer cette personne?")) {
+    this.apiEvenementService.supprimerPersonneEvent(mail, idEvent)}
   }
 
   protected readonly String = String;
 }
+
