@@ -33,8 +33,9 @@ export class InscriptionEventComponent implements OnInit{
     const id = this.route.snapshot.params['id']; //récupérer l'id àpartir du routage (du lien url)
     this.apiEvenementService.listerPersonnesEvent(id).subscribe((dataP : Personne[])=>{
       this.listeParticipants = dataP;
+      this.test = this.listeParticipants.length; // le mettre la sinon ça se fait avant que la liste ne se remplisse (syncronised)
     });
-    this.test = this.listeParticipants.length; // NICO : ICI DANS LISTE DE PARTICIPANT J'AI RIEN, J'AI TJRS 0 EN NOMBRE DE PERSONNE
+    //this.test = this.listeParticipants.length; // NICO : ICI DANS LISTE DE PARTICIPANT J'AI RIEN, J'AI TJRS 0 EN NOMBRE DE PERSONNE
 
     //------------------------
     this.personnes = new Personne();
