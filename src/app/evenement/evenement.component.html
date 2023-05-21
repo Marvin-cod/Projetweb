@@ -15,10 +15,9 @@
     <td>{{evenement.lieu_event}}</td>
     <td>{{evenement.date_cloture}}</td>
     <td>{{evenement.description}}</td>
-    <td>{{evenement.id}}</td>
-
+    <td>{{evenement.nombre_max}}</td>
   <td><button class="col-12 btn btn-primary" routerLink="../../inscription-event/{{evenement.id}}">S'inscrire</button>
-    <button class="col-12 btn btn-danger" (click)='suppression(evenement.id)' routerLink="../../lister-evt">Supprimer</button> <!--supprimer visible que si admin-->
+    <button id ="supprimer" class="col-12 btn btn-danger" (click)='suppression(evenement.id)' routerLink="../../lister-evt">Supprimer</button> <!--supprimer visible que si admin-->
   </td>
 
   </tbody>

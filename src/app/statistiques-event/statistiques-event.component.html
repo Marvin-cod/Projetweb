@@ -27,15 +27,18 @@
   <thead>
   <tr>
     <th class="col-2">Prénom</th>
-    <th class="col-4">mail</th>
-    <th class="col-6">nombre d'évenements</th>
+    <th class="col-2">Nom</th>
+    <th class="col-4">Adresse mail</th>
+    <th class="col-6">Numéro de téléphone</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let pers of this.listeParticipants; index as i">
     <td><a >{{pers.prenom}}</a></td>
+    <td>{{pers.nom}}</td>
     <td>{{pers.mail}}</td>
-    <td><button class="col-12" (click)="supprimerPersonnesEvent(pers.mail,evenement.id)" routerLink="../../lister-evt">Supprimer</button> <!--supprimer visible que si admin-->
+    <td>{{pers.telephone}}</td>
+    <td><button class="col-12" (click)="supprimerPersonnesEvent(pers.mail,evenement.id)" routerLink="../../stats">Supprimer</button> <!--supprimer visible que si admin-->
     </td>
   </tr>
   </tbody>

@@ -20,13 +20,15 @@ export class CreationCompteComponent {
   constructor(private apiEvenementService : ApiEvenementsService,private router: Router,private httpClient: HttpClient
   )
  {
+   this.pers = new Personne();
   }
 
 
 
 
   ajouterPersonne(){
-    this.httpClient.post('http://localhost:3000/api/personnes', this.pers);
+    this.pers.idEvent="";
+    this.apiEvenementService.ajouterPersonne(this.pers);
     }
 
 
