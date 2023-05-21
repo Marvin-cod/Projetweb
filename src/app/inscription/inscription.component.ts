@@ -31,13 +31,14 @@ export class InscriptionComponent /*implements OnInit*/{
 
   printer : string | undefined;
   constructor(private router: Router,
-              private param : GlobalDataService//ajoutmarvin
+              private param : GlobalDataService,//ajoutmarvin
+              private apiEvenementService : ApiEvenementsService,
               /*,public globalData: GlobalDataService,private httpClient: HttpClient*/
   ) {
 
   }
     private currentUser: User | null = null;
-
+/*
     login(username: string, password: string) {
       if (username === 'admin' && password === 'admin') {
         this.param.setMyGlobalVariableTrue();//ajout marvin la c'est true
@@ -56,7 +57,7 @@ export class InscriptionComponent /*implements OnInit*/{
         };
       }
     }
-
+*/
 logout() {
   this.currentUser = null;
 }
@@ -70,13 +71,21 @@ isAdminBool() {
 }
 
   onLogin(){
-    this.login(this.username,this.password);
     if (this.password === undefined || this.username === undefined){
-      this.TexteVide =  "Attention, vous n'avez rien ecrit de pseudo ou de mot de passe.";
+      this.TexteVide =  "Attention, vous n'avez pas saisi toutes les informations nécessaires";
+    }
+    //appeler API  vérifier admin et admin renvoyer un tru et passer la variable en vrai
+    //Garder la connexion ouverte tant que pas appuyer sur deconnexion
+    else{
+      if(this.username==="admin"&& this.password==="admin"){
+        this.param.setMyGlobalVariableTrue();
+        this.router.navigate(['lister-evt']);
+      }
+      else{
+        this.TexteVide =  "Compte inexistant, veuillez-vous rappochez de l'admin pour vous connecter";
+      }
 
-    }else {
-      this.TexteVide ="";
-      this.router.navigate(['lister-evt']);
+
     }
   }
 

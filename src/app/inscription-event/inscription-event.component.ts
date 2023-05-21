@@ -55,7 +55,7 @@ export class InscriptionEventComponent implements OnInit{
       this.apiEvenementService.getEvenement(id).subscribe((data)=>{this.evenement=data;
         this.nbPersMax = this.evenement.nombre_max;
         if (this.nbPersMax <= this.nbPersDansEvt){
-          this.msgImp = "Cet évènement est déjà rempli ";
+          this.msgImp = "Le nombre maximum d'utilisateurs a été atteint ";
           this.isButtonDisabled = true;
 
         }

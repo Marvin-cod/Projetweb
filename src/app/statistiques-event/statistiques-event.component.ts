@@ -14,6 +14,7 @@ export class StatistiquesEventComponent {
   // @ts-ignore
   evenement: Evenement;
   listeParticipants : Personne [] = []
+  nombreParticipants = 0;
   constructor(private apiEvenementService : ApiEvenementsService,
               private httpClient : HttpClient,
               private router : Router,
@@ -24,6 +25,7 @@ export class StatistiquesEventComponent {
     this.apiEvenementService.getEvenement(id).subscribe((data)=>{this.evenement=data});
     this.apiEvenementService.listerPersonnesEvent(id).subscribe((dataP : Personne[])=>{
       this.listeParticipants = dataP;
+      this.nombreParticipants = this.listeParticipants.length;
     });
 
   }

@@ -47,5 +47,9 @@ export class ApiEvenementsService {
       (reponse : Personne)=> {console.log(reponse);},
       (error)=>{console.log("erreur lors de l'ajout")});
   }
+  public connexion(data: string){
+    return this.httpClient.post<{valid : boolean}>('/api/valid',data);
+
+  }
 }
 

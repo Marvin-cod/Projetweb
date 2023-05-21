@@ -7,10 +7,9 @@
 <tr>
   <th class="col-2">Nom</th>
   <th class="col-4">lieu</th>
-  <th class="col-4">date de cloture</th>
-  <th class="col-6">Description</th>
+  <th class="col-2">date de cloture</th>
+  <th class="col-8">Description</th>
   <th class="col-6">nombres max de personnes</th>
-  <th>Choix</th>
 </tr>
 </thead>
 <tbody>
@@ -18,7 +17,7 @@
 <td>{{evenement.lieu_event}}</td>
 <td>{{evenement.date_cloture}}</td>
 <td>{{evenement.description}}</td>
-<td>{{evenement.nombre_max}}</td>
+<td>{{nombreParticipants}}/{{evenement.nombre_max}}</td>
 </tbody>
 </table></div>
 <br><br>
@@ -29,6 +28,7 @@
     <th class="col-2">Nom</th>
     <th class="col-4">Adresse mail</th>
     <th class="col-6">Numéro de téléphone</th>
+    <th class="col-6">Choix</th>
   </tr>
   </thead>
   <tbody>
