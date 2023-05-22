@@ -1,4 +1,4 @@
-export class Evenement{
+export class Evenement {
   // @ts-ignore
   id: number;
   // @ts-ignore
@@ -12,7 +12,7 @@ export class Evenement{
   // @ts-ignore
   date_ouverture: string;
   // @ts-ignore
-  date_cloture : string ;
+  date_cloture: string;
   // @ts-ignore pour que cela ne soit pas souliogné en rouge car c'est la bonne écriture
   nombre_max: number;
   //ajouter compteur dans evenement pour savoir quand max personne est atteint

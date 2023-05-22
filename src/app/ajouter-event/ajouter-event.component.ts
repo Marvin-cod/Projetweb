@@ -11,15 +11,17 @@ import {Evenement} from "../Evenement";
 export class AjouterEventComponent implements OnInit {
 
   // @ts-ignore
-  evenement : Evenement;
-  constructor(private apiEvenementService : ApiEvenementsService,
+  evenement: Evenement;
+
+  constructor(private apiEvenementService: ApiEvenementsService,
               private httpClient: HttpClient) {
   }
+
   ngOnInit() {
     this.evenement = new Evenement();
   }
 
-  ajouter(){
+  ajouter() {
     let dateTemp = this.evenement.date_cloture.split("-"); // chaîne de date au format yyyy-mm-dd, sépare la chaîne en parties (année, mois, jour)
     this.evenement.date_cloture = dateTemp.reverse().join("/"); // inverse l'ordre des parties et les joint avec des "/"
     // format dd/mm/yyyy

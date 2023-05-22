@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiEvenementsService} from "../api-evenements.service";
 import {HttpClient} from "@angular/common/http";
 // import {liste} from "../lister-event/lister-event.component"; a voir j'ai pensé a cette solution
@@ -7,54 +7,55 @@ import {Evenement} from "../Evenement";
 import {ActivatedRoute, Router} from "@angular/router";
 
 
-
-
 @Component({
   selector: 'app-inscription-event',
   templateUrl: './inscription-event.component.html',
   styleUrls: ['./inscription-event.component.css']
 })
 
-export class InscriptionEventComponent implements OnInit{
+export class InscriptionEventComponent implements OnInit {
   // @ts-ignore
-  personnes : Personne;
+  personnes: Personne;
   // @ts-ignore
   evenement: Evenement;
   //@ts-ignore
-  ID : number;
-  listeParticipants : Personne [] = [];
+  ID: number;
+  listeParticipants: Personne [] = [];
   isButtonDisabled = false;
 
-  nbPersDansEvt : number = 0;
-  nbPersMax : number = 0;
-  msgImp : string | undefined   ;
-  constructor(private apiEvenementService : ApiEvenementsService,
+  nbPersDansEvt: number = 0;
+  nbPersMax: number = 0;
+  msgImp: string | undefined;
+
+  constructor(private apiEvenementService: ApiEvenementsService,
               private httpClient: HttpClient,
-              private route : ActivatedRoute,
-              private router : Router) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
+
   ngOnInit() {
 
     const id = this.route.snapshot.params['id'];//récupérer l'id àpartir du routage (du lien url)
     this.ID = id;
-    this.apiEvenementService.listerPersonnesEvent(id).subscribe((dataP : Personne[])=>{
+    this.apiEvenementService.listerPersonnesEvent(id).subscribe((dataP: Personne[]) => {
       this.listeParticipants = dataP;
 
-      for (let i=0;i<this.listeParticipants.length;i++){
+      for (let i = 0; i < this.listeParticipants.length; i++) {
         let tabID = this.listeParticipants[i].idEvent.split(" ");
 
-        for (let j = 0; j<tabID.length;j++){
+        for (let j = 0; j < tabID.length; j++) {
 
-          if(tabID[j] == id){
-            this.nbPersDansEvt = this.nbPersDansEvt+1;
+          if (tabID[j] == id) {
+            this.nbPersDansEvt = this.nbPersDansEvt + 1;
           }
         }
       }
 
 
-      this.apiEvenementService.getEvenement(id).subscribe((data)=>{this.evenement=data;
+      this.apiEvenementService.getEvenement(id).subscribe((data) => {
+        this.evenement = data;
         this.nbPersMax = this.evenement.nombre_max;
-        if (this.nbPersMax <= this.nbPersDansEvt){
+        if (this.nbPersMax <= this.nbPersDansEvt) {
           this.msgImp = "Le nombre maximum d'utilisateurs a été atteint ";
           this.isButtonDisabled = true;
 
@@ -67,13 +68,18 @@ export class InscriptionEventComponent implements OnInit{
     this.personnes = new Personne();
 
   }
-  ajouteridEvent(){
-    this.route.params.subscribe(params => {this.personnes.idEvent= params["id"]});
+
+  ajouteridEvent() {
+    this.route.params.subscribe(params => {
+      this.personnes.idEvent = params["id"]
+    });
   }
-  ajouterPersonne(){
+
+  ajouterPersonne() {
 
     this.ajouteridEvent();
     this.apiEvenementService.ajouterPersonne(this.personnes);
 
 
-}}
+  }
+}

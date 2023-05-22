@@ -13,22 +13,26 @@ import {GlobalDataService} from "../global-data.service"; //ajout marvin
   styleUrls: ['./lister-event.component.css']
 })
 
-export class ListerEventComponent  implements OnInit{
+export class ListerEventComponent implements OnInit {
   liste: Evenement[] = [];
   isAdmin: boolean | undefined;
 
-  listeSansAncien : Evenement[] = [];
+  listeSansAncien: Evenement[] = [];
 
   //@ts-ignore
-  DateAcutelle : Date;
+  DateAcutelle: Date;
+
   constructor(
     private apiEvenementService: ApiEvenementsService,
     private authService: InscriptionComponent,
-    private param : GlobalDataService
-  ) {}
+    private param: GlobalDataService
+  ) {
+  }
+
   dateIncorrect(date1: Date, date2: Date): boolean {
     return date1.getTime() > date2.getTime();
   }
+
   // date actuel 2022 > ferme en 2021 ==> True
 
   ngOnInit() {
@@ -36,7 +40,7 @@ export class ListerEventComponent  implements OnInit{
     let addEvent = document.getElementById("addEvent");
     let stat = document.getElementById("stat");
 
-    if (this.isAdmin === false){
+    if (this.isAdmin === false) {
       // @ts-ignore
       stat.style.display = "none";
       // @ts-ignore
@@ -59,27 +63,6 @@ export class ListerEventComponent  implements OnInit{
 
 
   }
-/*
-  this.listeSansAncien = data.filter(evenement => {
-    const [dayCloture, monthCloture, yearCloture] = evenement.date_cloture.split("/").map(Number);
-    const dateCloture = new Date(yearCloture, monthCloture - 1, dayCloture);
-    return dateCloture > this.DateAcutelle;
-  });
-*/
-
-
-
-
-
-
-  /*
-  const p1 = new Evenement();
-  p1.nom_event="Soirée de fou";
-  p1.lieu_event="Toulouse 3 chemin de la foire";
-  p1.date_cloture=new Date(2023,5,2);//pas de 0 devant sinon pas compris
-  this.liste.push(p1);
-*/
-
 
 
 }

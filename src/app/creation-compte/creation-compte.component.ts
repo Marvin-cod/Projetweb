@@ -16,21 +16,18 @@ export class CreationCompteComponent {
 
   personnes: Personne[] = [];
   //@ts-ignore
-  pers : Personne;
-  constructor(private apiEvenementService : ApiEvenementsService,private router: Router,private httpClient: HttpClient
-  )
- {
-   this.pers = new Personne();
+  pers: Personne;
+
+  constructor(private apiEvenementService: ApiEvenementsService, private router: Router, private httpClient: HttpClient
+  ) {
+    this.pers = new Personne();
   }
 
 
-
-
-  ajouterPersonne(){
-    this.pers.idEvent="";
+  ajouterPersonne() {
+    this.pers.idEvent = "";
     this.apiEvenementService.ajouterPersonne(this.pers);
-    }
-
+  }
 
 
 }

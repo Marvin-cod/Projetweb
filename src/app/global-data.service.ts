@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,7 @@ export class GlobalDataService {
   setMyGlobalVariableTrue() {
     this.myGlobalVariable = true;
   }
+
   setMyGlobalVariableFalse() {//j'ai enlevé à l'interieur la variable
     this.myGlobalVariable = false;
   }

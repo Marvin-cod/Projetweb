@@ -1,4 +1,6 @@
-<div><button routerLink="../../lister-evt" class="btn btn-primary">Liste des évenements</button></div>
+<div>
+  <button routerLink="../../lister-evt" class="btn btn-primary">Liste des évenements</button>
+</div>
 <table class="table table-striped">
   <thead>
   <tr>
@@ -11,13 +13,16 @@
   </tr>
   </thead>
   <tbody>
-    <td>{{evenement.nom_event}}</td>
-    <td>{{evenement.lieu_event}}</td>
-    <td>{{evenement.date_cloture}}</td>
-    <td>{{evenement.description}}</td>
-    <td>{{nombrePersonnes}}/{{evenement.nombre_max}}</td>
-  <td><button class="col-12 btn btn-primary" routerLink="../../inscription-event/{{evenement.id}}">S'inscrire</button>
-    <button id ="supprimer" class="col-12 btn btn-danger" (click)='suppression(evenement.id)' routerLink="../../lister-evt">Supprimer</button> <!--supprimer visible que si admin-->
+  <td>{{evenement.nom_event}}</td>
+  <td>{{evenement.lieu_event}}</td>
+  <td>{{evenement.date_cloture}}</td>
+  <td>{{evenement.description}}</td>
+  <td>{{nombrePersonnes}}/{{evenement.nombre_max}}</td>
+  <td>
+    <button class="col-12 btn btn-primary" routerLink="../../inscription-event/{{evenement.id}}">S'inscrire</button>
+    <button id="supprimer" class="col-12 btn btn-danger" (click)='suppression(evenement.id)'
+            routerLink="../../lister-evt">Supprimer
+    </button> <!--supprimer visible que si admin-->
   </td>
 
   </tbody>

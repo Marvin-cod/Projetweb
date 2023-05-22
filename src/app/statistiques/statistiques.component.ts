@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import {Evenement} from "../Evenement";
 import {Personne} from "../Personne";
 import {ApiEvenementsService} from "../api-evenements.service";
@@ -11,21 +11,24 @@ import {ApiEvenementsService} from "../api-evenements.service";
 })
 export class StatistiquesComponent {
   listestats: Evenement[] = [];
-  listeParticipants : Personne[] = [];
+  listeParticipants: Personne[] = [];
   nombreEvent = 0;
   nombrePersonnes = 0;
   nombreMoyens = 0;
-  constructor(private apiEvenementService : ApiEvenementsService) {}
-  ngOnInit(){ //dès le démarrage (nginit) initialise notre liste
-    this.apiEvenementService.recupererliste().subscribe((dataE : Evenement[])=>{
+
+  constructor(private apiEvenementService: ApiEvenementsService) {
+  }
+
+  ngOnInit() { //dès le démarrage (nginit) initialise notre liste
+    this.apiEvenementService.recupererliste().subscribe((dataE: Evenement[]) => {
       this.listestats = dataE;
       this.nombreEvent = this.listestats.length;
-      this.nombreMoyens = this.nombrePersonnes/this.nombreEvent;
+      this.nombreMoyens = this.nombrePersonnes / this.nombreEvent;
     });
-    this.apiEvenementService.listerPersonnes().subscribe((dataP : Personne[])=>{
+    this.apiEvenementService.listerPersonnes().subscribe((dataP: Personne[]) => {
       this.listeParticipants = dataP;
       this.nombrePersonnes = this.listeParticipants.length;
-      this.nombreMoyens = this.nombrePersonnes/this.nombreEvent;
+      this.nombreMoyens = this.nombrePersonnes / this.nombreEvent;
     });
   }
 }

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InscriptionComponent } from './inscription.component';
+import {InscriptionComponent} from './inscription.component';
 
 describe('InscriptionComponent', () => {
   let component: InscriptionComponent;
@@ -8,9 +8,9 @@ describe('InscriptionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InscriptionComponent ]
+      declarations: [InscriptionComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(InscriptionComponent);
     component = fixture.componentInstance;

@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ApiEvenementsService } from './api-evenements.service';
+import {ApiEvenementsService} from './api-evenements.service';
 
 describe('ApiEvenementsService', () => {
   let service: ApiEvenementsService;

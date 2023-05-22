@@ -1,44 +1,50 @@
-
 <!--capable d'afficher la liste des personnes par évenement et pouvoir les supprimer-->
 <!--nombre participants, liste participants et leurs détails,
 éditer la liste des personnes -->
-<div><table class="table table-striped">
-<thead>
-<tr>
-  <th class="col-2">Nom</th>
-  <th class="col-4">lieu</th>
-  <th class="col-2">date de cloture</th>
-  <th class="col-8">Description</th>
-  <th class="col-6">nombres max de personnes</th>
-</tr>
-</thead>
-<tbody>
-<td>{{evenement.nom_event}}</td>
-<td>{{evenement.lieu_event}}</td>
-<td>{{evenement.date_cloture}}</td>
-<td>{{evenement.description}}</td>
-<td>{{nombreParticipants}}/{{evenement.nombre_max}}</td>
-</tbody>
-</table></div>
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="col-2">Nom</th>
+      <th class="col-4">lieu</th>
+      <th class="col-2">date de cloture</th>
+      <th class="col-8">Description</th>
+      <th class="col-6">nombres max de personnes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <td>{{evenement.nom_event}}</td>
+    <td>{{evenement.lieu_event}}</td>
+    <td>{{evenement.date_cloture}}</td>
+    <td>{{evenement.description}}</td>
+    <td>{{nombreParticipants}}/{{evenement.nombre_max}}</td>
+    </tbody>
+  </table>
+</div>
 <br><br>
-<div><table class="table table-striped">
-  <thead>
-  <tr>
-    <th class="col-2">Prénom</th>
-    <th class="col-2">Nom</th>
-    <th class="col-4">Adresse mail</th>
-    <th class="col-6">Numéro de téléphone</th>
-    <th class="col-6">Choix</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let pers of this.listeParticipants; index as i">
-    <td><a >{{pers.prenom}}</a></td>
-    <td>{{pers.nom}}</td>
-    <td>{{pers.mail}}</td>
-    <td>{{pers.telephone}}</td>
-    <td><button class="col-12" (click)="supprimerPersonnesEvent(pers.mail,evenement.id)" routerLink="../../stats">Supprimer</button> <!--supprimer visible que si admin-->
-    </td>
-  </tr>
-  </tbody>
-</table></div>
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="col-2">Prénom</th>
+      <th class="col-2">Nom</th>
+      <th class="col-4">Adresse mail</th>
+      <th class="col-6">Numéro de téléphone</th>
+      <th class="col-6">Choix</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pers of this.listeParticipants; index as i">
+      <td><a>{{pers.prenom}}</a></td>
+      <td>{{pers.nom}}</td>
+      <td>{{pers.mail}}</td>
+      <td>{{pers.telephone}}</td>
+      <td>
+        <button class="col-12" (click)="supprimerPersonnesEvent(pers.mail,evenement.id)" routerLink="../../stats">
+          Supprimer
+        </button> <!--supprimer visible que si admin-->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
