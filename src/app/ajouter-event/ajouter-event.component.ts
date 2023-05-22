@@ -30,31 +30,35 @@ export class AjouterEventComponent implements OnInit {
   }
 
   ajouter() {
-
+    let dateCtemp = this.evenement.date_cloture; //Garder la date en format yyyy-mm-dd pour la verifDate()
     let dateTemp = this.evenement.date_cloture.split("-"); // chaîne de date au format yyyy-mm-dd, sépare la chaîne en parties (année, mois, jour)
     this.evenement.date_cloture = dateTemp.reverse().join("/"); // inverse l'ordre des parties et les joint avec des "/"
     // format dd/mm/yyyy
-    if (this.verifDate(this.evenement.date_cloture, this.evenement.date_ouverture) && this.evenement.acronyme != undefined && this.evenement.nombre_max > 0) {
-      this.router.navigate(['lister-evt']);
-      this.apiEvenementService.ajouterEvenement(this.evenement);
-
-    } else {
-      if (this.evenement.acronyme == undefined) {
-        this.msgA = "Veuillez ajouter l'acronyme";
+    if(this.evenement.acronyme != undefined){
+      this.msgA="";
+      if(this.verifDate(dateCtemp, this.evenement.date_ouverture)){
+        this.msg="";
+        if(this.evenement.nombre_max >0){
+          this.router.navigate(['lister-evt']);
+          this.apiEvenementService.ajouterEvenement(this.evenement);
+        }
+        else{
+          this.msgN="Veuillez saisir le nombre maximum de participants";
+        }
       }
-      if (!this.verifDate(this.evenement.date_cloture, this.evenement.date_ouverture)) {
-        this.msg = "Mauvaise date";
+      else{
+        this.msg="Mauvaise date";
       }
-      if (this.evenement.nombre_max > 0 || this.evenement.nombre_max == undefined) {
-        this.msgN = "Veuillez saisir un nombre positif de participants max";
-      }
+    }
+    else{
+      this.msgA="Veuillez ajouter l'acronyme";
     }
   }
 
   public verifDate(dateCloture: string, dateOuverture: string) {
     let dateCtemp: Date = new Date(dateCloture);
     let dateOtemp: Date = new Date(dateOuverture);
-    if (dateOtemp > dateCtemp) {
+    if (dateOtemp > dateCtemp ) {
       return false;
     }
     return true;
