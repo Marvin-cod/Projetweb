@@ -9,8 +9,7 @@ export class Personne {
   // @ts-ignore
   telephone: string;
   // @ts-ignore
-  idEvent: string; //liste avant
-  // @ts-ignore
-  admin: string;
+  idEvent: string;
+
 
 }
