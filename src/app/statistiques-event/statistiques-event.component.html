@@ -1,6 +1,3 @@
-<!--capable d'afficher la liste des personnes par évenement et pouvoir les supprimer-->
-<!--nombre participants, liste participants et leurs détails,
-éditer la liste des personnes -->
 <div>
   <table class="table table-striped">
     <thead>
@@ -42,7 +39,7 @@
       <td>
         <button class="col-12" (click)="supprimerPersonnesEvent(pers.mail,evenement.id)" routerLink="../../stats">
           Supprimer
-        </button> <!--supprimer visible que si admin-->
+        </button>
       </td>
     </tr>
     </tbody>

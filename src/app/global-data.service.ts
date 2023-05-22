@@ -10,7 +10,7 @@ export class GlobalDataService {
     this.myGlobalVariable = true;
   }
 
-  setMyGlobalVariableFalse() {//j'ai enlevé à l'interieur la variable
+  setMyGlobalVariableFalse() {
     this.myGlobalVariable = false;
   }
 }

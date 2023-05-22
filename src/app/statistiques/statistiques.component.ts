@@ -1,4 +1,4 @@
-import {Component, NgModule} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Evenement} from "../Evenement";
 import {Personne} from "../Personne";
 import {ApiEvenementsService} from "../api-evenements.service";
@@ -9,7 +9,7 @@ import {ApiEvenementsService} from "../api-evenements.service";
   templateUrl: './statistiques.component.html',
   styleUrls: ['./statistiques.component.css']
 })
-export class StatistiquesComponent {
+export class StatistiquesComponent implements OnInit{
   listestats: Evenement[] = [];
   listeParticipants: Personne[] = [];
   nombreEvent = 0;

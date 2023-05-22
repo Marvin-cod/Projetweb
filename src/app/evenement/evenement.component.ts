@@ -31,7 +31,7 @@ export class EvenementComponent implements OnInit {
 
   ngOnInit() {
     this.isAdmin = this.param.myGlobalVariable;
-    const id = this.routeactive.snapshot.params['id']; //récupérer l'id àpartir du routage (du lien url)
+    const id = this.routeactive.snapshot.params['id'];
     this.apiEvenementService.getEvenement(id).subscribe((data) => {
       this.evenement = data
     });
@@ -44,13 +44,6 @@ export class EvenementComponent implements OnInit {
       // @ts-ignore
       supprimer.style.display = "none";
     }
-    /*
-    this.evenement = new Evenement();
-    this.evenement.id=1;
-    this.evenement.lieu_event="Toulouse";
-    this.evenement.nom_event="la plus incroyable soirée avec plus de detail";
-    this.evenement.date_cloture="17/09/2023";//ecrire le reste si on veut pour l'instant flemme
-*/
 
   }
 

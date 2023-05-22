@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiEvenementsService} from "../api-evenements.service";
 import {HttpClient} from "@angular/common/http";
-// import {liste} from "../lister-event/lister-event.component"; a voir j'ai pensé a cette solution
 import {Personne} from "../Personne";
 import {Evenement} from "../Evenement";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -35,7 +34,7 @@ export class InscriptionEventComponent implements OnInit {
 
   ngOnInit() {
 
-    const id = this.route.snapshot.params['id'];//récupérer l'id àpartir du routage (du lien url)
+    const id = this.route.snapshot.params['id'];
     this.ID = id;
     this.apiEvenementService.listerPersonnesEvent(id).subscribe((dataP: Personne[]) => {
       this.listeParticipants = dataP;

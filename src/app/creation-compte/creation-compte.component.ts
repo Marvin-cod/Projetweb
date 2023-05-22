@@ -1,10 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Personne} from "../Personne";
-import {Evenement} from "../Evenement";
-import {ActivatedRoute, Router} from "@angular/router";
+import { Router} from "@angular/router";
 import {ApiEvenementsService} from "../api-evenements.service";
 import {HttpClient} from "@angular/common/http";
-import {GlobalDataService} from "../global-data.service";
 
 
 @Component({
@@ -14,7 +12,6 @@ import {GlobalDataService} from "../global-data.service";
 })
 export class CreationCompteComponent {
 
-  personnes: Personne[] = [];
   //@ts-ignore
   pers: Personne;
 

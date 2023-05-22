@@ -1,8 +1,6 @@
 import {Component, Injectable, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {GlobalDataService} from "../global-data.service";
-import {ApiEvenementsService} from "../api-evenements.service";
-import {HttpClient} from "@angular/common/http";
 import {Personne} from "../Personne";
 
 export interface User {
@@ -20,7 +18,7 @@ export interface User {
   styleUrls: ['./inscription.component.css']
 })
 
-export class InscriptionComponent /*implements OnInit*/ {
+export class InscriptionComponent {
   //@ts-ignore
   username: string;
   personnes: Personne[] = [];
@@ -33,35 +31,13 @@ export class InscriptionComponent /*implements OnInit*/ {
   printer: string | undefined;
 
   constructor(private router: Router,
-              private param: GlobalDataService,//ajoutmarvin
-              private apiEvenementService: ApiEvenementsService,
-              /*,public globalData: GlobalDataService,private httpClient: HttpClient*/
+              private param: GlobalDataService,
   ) {
 
   }
 
   private currentUser: User | null = null;
 
-  /*
-      login(username: string, password: string) {
-        if (username === 'admin' && password === 'admin') {
-          this.param.setMyGlobalVariableTrue();//ajout marvin la c'est true
-          this.currentUser = {
-            username,
-            password,
-            isAdmin: true
-          };
-        }
-        else {
-          this.param.setMyGlobalVariableFalse();//ajout marvin la c'est false
-          this.currentUser = {
-            username,
-            password,
-            isAdmin: false
-          };
-        }
-      }
-  */
   logout() {
     this.currentUser = null;
   }
@@ -77,10 +53,7 @@ export class InscriptionComponent /*implements OnInit*/ {
   onLogin() {
     if (this.password === undefined || this.username === undefined) {
       this.TexteVide = "Attention, vous n'avez pas saisi toutes les informations nécessaires";
-    }
-      //appeler API  vérifier admin et admin renvoyer un tru et passer la variable en vrai
-    //Garder la connexion ouverte tant que pas appuyer sur deconnexion
-    else {
+    } else {
       if (this.username === "admin" && this.password === "admin") {
         this.param.setMyGlobalVariableTrue();
         this.router.navigate(['lister-evt']);
