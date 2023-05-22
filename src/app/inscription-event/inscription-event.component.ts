@@ -75,10 +75,14 @@ export class InscriptionEventComponent implements OnInit {
   }
 
   ajouterPersonne() {
-
-    this.ajouteridEvent();
-    this.apiEvenementService.ajouterPersonne(this.personnes);
-
+    if (this.personnes.nom === undefined || this.personnes.mail === undefined || this.personnes.prenom === undefined){
+      this.msgImp="Les champs (nom,prenom,mail) sont obligatoires";
+    }
+    else {
+      this.ajouteridEvent();
+      this.apiEvenementService.ajouterPersonne(this.personnes);
+      this.router.navigate(['lister-evt']);
+    }
 
   }
 }
